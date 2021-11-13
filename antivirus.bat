@@ -2,11 +2,11 @@
 color 0
 cls
 
-echo ahoj jsem Antivirus 2.0 Beta jak v m mohu pomoci?
+echo ahoj jsem Antivirus 2.0 Beta jak vÂ m mohu pomoci?
 :vypis_akci
-echo Mo§n‚ akce:
+echo MoÂ§nâ€š akce:
 echo    konec
-echo    karant‚na 
+echo    karantâ€šna 
 echo    odstranit
 echo    vybrat
 echo    hacker
@@ -18,7 +18,7 @@ echo    informace
 set  /p _vstup=Zadej akci: 
 TITLE Antivirus 2.0 Beta
 if "%_vstup%"=="konec" goto konec
-if "%_vstup%"=="karant‚na" goto karantena
+if "%_vstup%"=="karantâ€šna" goto karantena
 if "%_vstup%"=="odstranit" goto odstranit
 if "%_vstup%"=="vybrat" goto vybrat
 if "%_vstup%"=="hacker" goto hacker
@@ -26,31 +26,31 @@ if "%_vstup%"=="skenovat" goto skenovat
 if "%_vstup%"=="kod md5" goto kod_md5
 if "%_vstup%"=="akce" goto vypis_akci
 if "%_vstup%"=="informace" goto informace
-if "%_vstup%"=="scan chov n¡" goto scan_chovani
-echo Nezn m  akce
+if "%_vstup%"=="scan chovÂ nË‡" goto scan_chovani
+echo NeznÂ mÂ  akce
 goto start
 
 :odstranit
-echo odstraåov n¡
+echo odstraÄºovÂ nË‡
 @timeout 3 > nul
 del hacker.jpg
 del halo.bat
-echo odstranØno!
-echo chyby (co dØlal virus?) 765499569code 021codeS
+echo odstranÅ˜no!
+echo chyby (co dÅ˜lal virus?) 765499569code 021codeS
 goto start
 
 :vybrat
 echo Antivirus
-set  /p _vir=zadejte jm‚no virusu:
+set  /p _vir=zadejte jmâ€šno virusu:
 echo ach jo
 timeout 3 > nul
 move /Y %_vir% karantena > nul
-echo pıesunuto do karant‚ny
+echo pÃ½esunuto do karantâ€šny
 timeout 1 > nul
 goto start
 
 :karantena
-echo Jseç v karant‚nØ!
+echo JseÃ§ v karantâ€šnÅ˜!
 goto start
 
 :skenovat
@@ -59,23 +59,24 @@ goto start
 
 :kod_md5
 set _tmp_file=code_md5.txt
-set /p file=Zadej jm‚no souboru: 
-@rem sem (nahoıe) zad ç jm‚no souboru
-@rem tohle pıed  md5 hash do souboru
+set /p file=Zadej jmâ€šno souboru: 
+@rem sem (nahoÃ½e) zadÂ Ã§ jmâ€šno souboru
+@rem tohle pÃ½edÂ  md5 hash do souboru
 @CertUtil -hashfile %file% MD5 > %_tmp_file% 
-@rem tohle pıeŸte md5 hash souboru
+@rem tohle pÃ½eÅºte md5 hash souboru
 for /f "tokens=1*delims=:" %%G in ('findstr /n "^" %_tmp_file%') do if %%G equ 2 set filemd5=%%H
-@rem tohle sma§e soubor s md5 hashem
+@rem tohle smaÂ§e soubor s md5 hashem
 del %_tmp_file%
 
 if "%filemd5%" == "1f 13 39 6f a5 9d 38 eb e7 6c cc 58 7c cb 11 bb" goto Navashield
 if "%filemd5%" == "c0 0b 9c 16 28 8d f6 78 fe d2 08 90 e5 ea 7f 5d" goto prd
 if "%filemd5%" == "01 63 e2 20 b0 16 04 d4 f0 85 49 8f 23 31 95 b5" goto iloveyou
-if "%filemd5%" == "f2 24 ef a7 1d e2 c2 25 4f 7c d0 5f 57 62 bc fd "goto Brytt
-if "%filemd5%" == "d3 2c 35 e9 53 e9 46 bd db e5 0b fe 98 05 cb 06"goto TurkishRansom
-if "%filemd5%" == "ef 4f df 65 fc 90 bf da 8d 1d 2a e6 d2 0a ff 60"goto NoEscape
-if "%filemd5%" == "31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19"goto AntivirusGOLD 
-if "%filemd5%" == "aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39"goto Nimda
+if "%filemd5%" == "f2 24 ef a7 1d e2 c2 25 4f 7c d0 5f 57 62 bc fd" goto Brytt
+if "%filemd5%" == "d3 2c 35 e9 53 e9 46 bd db e5 0b fe 98 05 cb 06" goto TurkishRansom
+if "%filemd5%" == "ef 4f df 65 fc 90 bf da 8d 1d 2a e6 d2 0a ff 60" goto NoEscape
+if "%filemd5%" == "31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19" goto AntivirusGOLD 
+if "%filemd5%" == "aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39" goto Nimda
+if "%filemd5%" == "6f 57 67 ec 5a 9c c6 f7 d1 95 dd e3 c3 93 91 20" goto CodeRed
 goto bezpecny
 
 :Navashield
@@ -98,18 +99,24 @@ color cf
 echo pozor virus nalezen! (iloveyou,loveletter)
 goto start
 
+:CodeRed
+color cf
+echo pozor virus nalezen! (Code Red)
+goto start
+
+
 :scan_chovani
 color 7
-echo V¡tejte ve scanu chov n¡ jak v m mohu pomoci?
+echo VË‡tejte ve scanu chovÂ nË‡ jak vÂ m mohu pomoci?
 echo.
 set  /p _vstup=zadat soubor:
 set _tmp_file=code_md5.txt
-@rem sem (nahoıe) zad ç jm‚no souboru
-@rem tohle pıed  md5 hash do souboru
+@rem sem (nahoÃ½e) zadÂ Ã§ jmâ€šno souboru
+@rem tohle pÃ½edÂ  md5 hash do souboru
 @CertUtil -hashfile %file% MD5 > %_tmp_file% 
-@rem tohle pıeŸte md5 hash souboru
+@rem tohle pÃ½eÅºte md5 hash souboru
 for /f "tokens=1*delims=:" %%G in ('findstr /n "^" %_tmp_file%') do if %%G equ 2 set filemd5=%%H
-@rem tohle sma§e soubor s md5 hashem
+@rem tohle smaÂ§e soubor s md5 hashem
 del %_tmp_file%
 if "%filemd5%" == "1f 13 39 6f a5 9d 38 eb e7 6c cc 58 7c cb 11 bb" goto Navashield
 if "%filemd5%" == "c0 0b 9c 16 28 8d f6 78 fe d2 08 90 e5 ea 7f 5d" goto prd
@@ -121,7 +128,7 @@ if "%filemd5%" == "31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19"goto Antiviru
 if "%filemd5%" == "aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39"goto Nimda
 echo.
 echo.
-echo Scan Chov n¡ (Beta)
+echo Scan ChovÂ nË‡ (Beta)
 pause > nul
 
 
@@ -129,7 +136,7 @@ pause > nul
 
 :informace
 color 07
-echo tento antivirus je zdarma,dØl  md5 kody pos¡l  novinky pıes gmail a ma§e soubory (tıeba halo.bat)
+echo tento antivirus je zdarma,dÅ˜lÂ  md5 kody posË‡lÂ  novinky pÃ½es gmail a maÂ§e soubory (tÃ½eba halo.bat)
 goto start
 
 :Brytt
@@ -144,21 +151,21 @@ echo pozor virus nalezen! (Turkish Ransom)
 color cf
 echo pozor virus nalezen! (NoEscape)
 echo Detaily:
-echo typ viru: nebezpeŸnì virus
+echo typ viru: nebezpeÅºnÄ› virus
 echo md5: ef 4f df 65 fc 90 bf da 8d 1d 2a e6 d2 0a ff 60
 
 :AntivirusGOLD
 color cf
 echo pozor virus nalezen! (Antivirus Gold)
 echo Detaily:
-echo typ viru: faleçnì antivirus
+echo typ viru: faleÃ§nÄ› antivirus
 echo md5: 31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19
 
 :Nimda
 color cf
 echo pozor virus nalezen! (Antivirus Gold)
 echo Detaily:
-echo typ viru: NebezpeŸnì virus
+echo typ viru: NebezpeÅºnÄ› virus
 echo md5: aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39
 
 
