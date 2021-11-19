@@ -77,6 +77,7 @@ if "%filemd5%" == "ef 4f df 65 fc 90 bf da 8d 1d 2a e6 d2 0a ff 60" goto NoEscap
 if "%filemd5%" == "31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19" goto AntivirusGOLD 
 if "%filemd5%" == "aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39" goto Nimda
 if "%filemd5%" == "6f 57 67 ec 5a 9c c6 f7 d1 95 dd e3 c3 93 91 20" goto CodeRed
+if "%filemd5%" == "d1 3f 89 00 34 a6 8c cb 4a f4 e0 bf 51 e2 b5 ec" goto Defray
 goto bezpecny
 
 :Navashield
@@ -126,6 +127,7 @@ if "%filemd5%" == "d3 2c 35 e9 53 e9 46 bd db e5 0b fe 98 05 cb 06"goto TurkishR
 if "%filemd5%" == "ef 4f df 65 fc 90 bf da 8d 1d 2a e6 d2 0a ff 60"goto NoEscape
 if "%filemd5%" == "31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19"goto AntivirusGOLD
 if "%filemd5%" == "aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39"goto Nimda
+if "%filemd5%" == "d1 3f 89 00 34 a6 8c cb 4a f4 e0 bf 51 e2 b5 ec" goto Defray
 echo.
 echo.
 echo Scan Chov nˇ (Beta)
@@ -163,13 +165,17 @@ echo md5: 31 59 1a 4a b9 50 06 41 5e 8e 0e 2a f7 e3 5f 19
 
 :Nimda
 color cf
-echo pozor virus nalezen! (Antivirus Gold)
+echo pozor virus nalezen! (Nimda)
 echo Detaily:
 echo typ viru: Nebezpeźně virus
 echo md5: aa 9e ca 49 c7 22 ec 1b ab bc 21 55 f1 a9 10 39
 
-
-
+:Defray
+color cf
+echo pozor virus nalezen! (Defray)
+echo Detaily:
+echo typ viru: Nebezpeźně virus
+echo md5: d1 3f 89 00 34 a6 8c cb 4a f4 e0 bf 51 e2 b5 ec
 
 
 
